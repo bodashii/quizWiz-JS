@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
     <title>Quiz Wiz-JavaScript</title>
 </head>
 <body>
-    <!-- This is the title  -->
-    <h1>Quiz Wiz-Javascript</h1>
-    <!-- Game instructions -->
-    <p>The instructions will be here.</p>
-    <!-- This will start the quiz -->
-    <button>START!</button>
-    <!-- this will display high scores -->
-    <div>View High Scores</div>
-    <!-- this will display time left to complete the quiz -->
-    <div>Timer:</div>
-    <!-- this will be the response if the answer is correct -->
-    <div>result</div>
+     <!-- This is the title  -->
+     <h1>Quiz Wiz-Javascript</h1>
+     <!-- Game instructions -->
+     <p>The instructions will be here.</p>
+     <!-- This will start the quiz -->
+     <button>START!</button>
+    <div class="container vh-100">
+        <div class="justify-content-center align-items-center">
+           <div class="box">
+               <p>Question</p>
+               <input id="text-field" type="text" class="form-control">
+               <input id="button" type="submit" value="Submit" class="btn btn-primary btn-block">
+           </div>
+            <!-- this will display high scores -->
+            <!-- <div>View High Scores</div> -->
+            <!-- this will display time left to complete the quiz -->
+            <!-- <div>Timer:</div> -->
+            <!-- this will be the response if the answer is correct -->
+            <!-- <div>result</div> -->
+        </div>
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>

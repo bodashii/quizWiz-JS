@@ -8,6 +8,9 @@
 > This is the first commit.
 > Added Start Button and various placeholders to index.html.
 > Added Sample questions to .js file
+> Added div for quiz where user will interact with the page dynamically
+> Linked to script.js
+> styled the body with font in style.css
 
 ### Screenshots ###
 > Coming soon.
