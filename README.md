@@ -6,7 +6,8 @@
 
 ## Build Status ##
 > This is the first commit.
-> Added Start Button and various placeholders.
+> Added Start Button and various placeholders to index.html.
+> Added Sample questions to .js file
 
 ### Screenshots ###
 > Coming soon.
