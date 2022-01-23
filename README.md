@@ -6,6 +6,7 @@
 
 ## Build Status ##
 > This is the first commit.
+> Added Start Button and various placeholders.
 
 ### Screenshots ###
 > Coming soon.
