@@ -19,6 +19,7 @@
 > solved issue with displaying buttons
 > switched questionIndex to let instead of const able to move through all questions
 > set function to deduct time when the wrong choice is picked
+> added logic to store high score
 
 ### Screenshots ###
 > Coming soon.

@@ -4,7 +4,8 @@ const content = document.querySelector("#content");
 const qzContent = document.querySelector("#qzContent");
 const highscoreLink = document.querySelector("#highscoreLink");
 const qzEl = document.querySelector("#title");
-let verdictDiv =document.querySelector("#verdict")
+let verdictDiv =document.querySelector("#verdict");
+let scoreDiv = document.querySelector("#score");
 
 
 var timeRemain = 60;
@@ -12,6 +13,7 @@ const totalQz = questions.length;
 let questionIndex = 0;
 let correct = 0;
 let aChoice;
+let pastScores;
 const choiceArray = [], subjectArray = [];
 
 
@@ -112,5 +114,58 @@ qzContent.addEventListener("click", function(event){
         questionIndex++;
         buildQuestion();
 });
+
+// shows score when done
+function viewVerdict(){
+
+    qzEl.innerHTML = "All done!";
+    qzEl.style.display = "block";
+
+    let k = document.createElement("p");
+    k.textContent = "Your Score : "+correct;
+    scoreDiv.appendChild(k);
+
+    let form = document.createElement("form");
+
+    let label = document.createElement("label");
+    label.textContent = "Your name : ";
+
+    let text = document.createElement("input");
+    text.setAttribute("id","name");
+    text.setAttribute("class","ml-3");
+
+    let postButton = document.createElement("button");
+    postButton.setAttribute("class","btn btn-primary rounded-pill mb-2 ml-3 mt-2");
+    postButton.textContent = "Post My Score";
+
+    scoreDiv.appendChild(form);
+
+    postButton.addEventListener("click", saveScore);
+}
+
+function saveScore(event){
+    event.preventDefault();
+    let user = document.querySelector("#name").ariaValueMax.trim();
+
+    if(user === null || user === ''){
+        alert("Name is required...");
+        return;
+    }
+
+    let u = {name : user, score : correct}
+    console.log(u);
+
+    pastScores = JSON.parse(localStorage.getItem("pastScores"));
+
+    if(pastScores){
+        pastScores.push(u);
+    }
+    else{
+        pastScores = [u];
+    }
+
+    // post submission
+    localStorage.setItem("pastScores", JSON.stringify(pastScores));
+}
 
 startBtn.addEventListener("click",startQz);
