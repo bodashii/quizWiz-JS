@@ -4,11 +4,12 @@ const content = document.querySelector("#content");
 const qzContent = document.querySelector("#qzContent");
 const highscoreLink = document.querySelector("#highscoreLink");
 const qzEl = document.querySelector("#title");
+let verdictDiv =document.querySelector("#verdict")
 
 
 var timeRemain = 60;
 const totalQz = questions.length;
-const questionIndex = 0;
+let questionIndex = 0;
 const input = 0;
 const choiceArray = [], subjectArray = [];
 
@@ -23,6 +24,10 @@ for(var j = 0 ; j < 4; j++){
     choiceArray.push(opt);
     subjectArray.push(subject);
 }
+
+var verdict  = document.createElement("p");
+verdict.setAttribute("class", "text-muted");
+verdictDiv.appendChild(verdict);
 
 
 function startQz(){
