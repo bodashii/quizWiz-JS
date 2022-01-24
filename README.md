@@ -21,6 +21,8 @@
 > set function to deduct time when the wrong choice is picked
 > added logic to store high score
 
+**[quizWiz-JS](maddnty.github.io/quizWiz-JS/)**
+
 
 ### Screenshots ###
 > Coming soon.
