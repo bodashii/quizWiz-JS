@@ -11,6 +11,8 @@
 > Added div for quiz where user will interact with the page dynamically
 > Linked to script.js
 > styled the body with font in style.css
+> wrapped a card around body content
+> added questions.js for organization
 
 ### Screenshots ###
 > Coming soon.

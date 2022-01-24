@@ -9,25 +9,47 @@
     <title>Quiz Wiz-JavaScript</title>
 </head>
 <body>
-     <!-- This is the title  -->
-     <h1>Quiz Wiz-Javascript</h1>
-     <!-- Game instructions -->
-     <p>The instructions will be here.</p>
-     <!-- This will start the quiz -->
-     <button>START!</button>
+     
+    
+     
     <div class="container vh-100">
-        <div class="justify-content-center align-items-center">
-           <div class="box">
-               <p>Question</p>
-               <input id="text-field" type="text" class="form-control">
-               <input id="button" type="submit" value="Submit" class="btn btn-primary btn-block">
-           </div>
-            <!-- this will display high scores -->
-            <!-- <div>View High Scores</div> -->
-            <!-- this will display time left to complete the quiz -->
-            <!-- <div>Timer:</div> -->
-            <!-- this will be the response if the answer is correct -->
-            <!-- <div>result</div> -->
+
+        <!-- start Card -->
+        <div class="card shadow rounded">
+
+            <!-- start cardBody -->
+            <div class="card-body">
+
+                <!-- This is the title  -->
+                <h1 id="title" class="card-title text-center">Quiz Wiz-Javascript</h1>
+
+                <!-- Game instructions -->
+                <p class="text-center">The instructions will be here.</p>
+
+                <!-- This will start the quiz -->
+                <div class="text-center">
+                    <button id="startBtn" class="btn-primary" >START!</button>
+                </div>
+                <div class="justify-content-center align-items-center">
+
+                    <div class="box">
+                        <p id="question">Question</p>
+                        <input id="a" type="submit" value="Submit" class="btn btn-primary btn-block">
+
+                        <input id="a" type="submit" value="Submit" class="btn btn-primary btn-block">
+
+                        <input id="a" type="submit" value="Submit" class="btn btn-primary btn-block">
+
+                        <input id="a" type="submit" value="Submit" class="btn btn-primary btn-block">
+                    </div>
+                    <!-- this will display high scores -->
+                    <!-- <div>View High Scores</div> -->
+                    <!-- this will display time left to complete the quiz -->
+                    <div id="timer"></div>
+                    <!-- this will be the response if the answer is correct -->
+                    <!-- <div>result</div> -->
+                </div>
+            </div>
         </div>
     </div>
     <script src="./script.js"></script>
