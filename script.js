@@ -10,7 +10,8 @@ let verdictDiv =document.querySelector("#verdict")
 var timeRemain = 60;
 const totalQz = questions.length;
 let questionIndex = 0;
-const input = 0;
+let correct = 0;
+let aChoice;
 const choiceArray = [], subjectArray = [];
 
 
@@ -64,7 +65,7 @@ function buildQuestion(){
         return;
     }
     else {
-        correct = questions[questionIndex].answer;
+        aChoice = questions[questionIndex].answer;
 
         // display question
         qzEl.innerHTML = questions[questionIndex].title;
@@ -88,13 +89,28 @@ qzContent.addEventListener("click", function(event){
     let answerOpt = choice.textContent;
     let otherOpt = answerOpt.substring(3, answerOpt.length);
 
-        if(otherOpt === input){
+        if(otherOpt === aChoice){
             correct++;
+            verdictDiv.style.display = "block";
+
+            verdict.textContent = "Great Job!"
+
+            setTimeout(function(){
+                verdict.textContent = "";
+            },500);
+        }
+        else {
+            timeRemain -= 10;
+
+            verdict.textContent = "Better luck next time..."
+
+            setTimeout(function(){
+                verdict.textContent = "";
+            },500);
         }
 
         questionIndex++;
         buildQuestion();
-    
 });
 
 startBtn.addEventListener("click",startQz);
