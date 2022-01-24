@@ -13,6 +13,7 @@
 > styled the body with font in style.css
 > wrapped a card around body content
 > added questions.js for organization
+> added logic for questions to be built and to fetch from array
 
 ### Screenshots ###
 > Coming soon.
