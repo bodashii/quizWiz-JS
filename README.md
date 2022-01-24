@@ -14,6 +14,7 @@
 > wrapped a card around body content
 > added questions.js for organization
 > added logic for questions to be built and to fetch from array
+> added high score link
 
 ### Screenshots ###
 > Coming soon.
