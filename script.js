@@ -6,12 +6,12 @@ const highscoreLink = document.querySelector("#highscoreLink");
 const qzEl = document.querySelector("#title");
 
 
-let timeRemain = 90;
+var timeRemain = 60;
 const totalQz = questions.length;
 const questionIndex = 0;
 const input = 0;
-const choiceArray = [];
-const subjectArray = [];
+const choiceArray = [], subjectArray = [];
+
 
 
 // start buttons for choices
