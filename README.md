@@ -21,6 +21,7 @@
 > set function to deduct time when the wrong choice is picked
 > added logic to store high score
 
+
 ### Screenshots ###
 > Coming soon.
 

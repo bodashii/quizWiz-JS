@@ -6,6 +6,7 @@ const highscoreLink = document.querySelector("#highscoreLink");
 const qzEl = document.querySelector("#title");
 let verdictDiv =document.querySelector("#verdict");
 let scoreDiv = document.querySelector("#score");
+let navlink = document.getElementById("#navLeaderboard");
 
 
 var timeRemain = 60;
@@ -27,19 +28,19 @@ for(var j = 0 ; j < 4; j++){
     choiceArray.push(opt);
     subjectArray.push(subject);
 }
-
+// sets response if question correct or wrong
 var verdict  = document.createElement("p");
 verdict.setAttribute("class", "text-muted");
 verdictDiv.appendChild(verdict);
 
-
+// starts quiz
 function startQz(){
 
     startTmr();
     buildQuestion();
 
 }
-
+// starts timer
 function startTmr(){
 
     var tmrInterval = setInterval(function(){
@@ -56,7 +57,7 @@ function startTmr(){
     }, 1000);
 
 }
-
+//  this builds each question
 function buildQuestion(){
 
     qzEl.style.display= "none";
@@ -85,6 +86,7 @@ function buildQuestion(){
     qzContent.style.display= "block";
 }
 // 
+// this displays each question as user progresses and deducts time
 qzContent.addEventListener("click", function(event){
 
     let choice = event.target;
@@ -166,6 +168,109 @@ function saveScore(event){
 
     // post submission
     localStorage.setItem("pastScores", JSON.stringify(pastScores));
+    showLeaderboard();
 }
+// dynamically creates table to display leaderboard
+function showLeaderboard(){
+    qzEl.innerHTML = "Leaderboard";
+    qzEl.setAttribute("class","text-center text-info");
+    qzEl.style.display = "block";
+
+    qzContent.style.display = "none";
+    scoreDiv.style.display = "none";
+
+        // display table with leaderboards
+        let t = document.createElement("table");
+        t.setAttribute("id","table");
+        t.style.textAlign = "center";
+
+        let tBody = document.createElement("tbody");
+
+        let row = document.createElement("tr");
+
+        let head = document.createElement("th");
+        let headText = document.createTextNode("Name");
+        head.setAttribute("class","bg-info");
+        head.appendChild(headText);
+        row.appendChild(head);
+
+        let head1 = document.createElement("th");
+        let headText1 = document.createTextNode("Name");
+        head1.setAttribute("class","bg-info");
+        head1.appendChild(headText1);
+        row.appendChild(head1);
+
+        tBody.appendChild(row);
+
+        let uLength = 0;
+        if(pastScores){
+            uLength = pastScores.length;
+        }
+
+        for (let i = 0; i < uLength; i++){
+            let row = document.createElement("tr");
+
+            let uName = pastScores[i].name;
+            let uScore = pastScores[i].score;
+
+            let cell = document.createElement("td");
+            let cellText = document.createTextNode(uName);
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+
+            let cell1 = document.createElement("td");
+            let cellText1 = document.createTextNode(uName);
+            cell.appendChild(cellText1);
+            row.appendChild(cell1);
+
+            tBody.appendChild(row);
+        }
+
+        // place tbody on table
+        if(uLength > 0){
+            buildQuestion.appendChild(tBody);
+        }
+
+        t.setAttribute("border", "2");
+        t.setAttribute("width", "100%");
+
+        leaderBoard.appendChild(t);
+
+        var scoreBtn = document.createElement("div");
+        scoreBtn.style.textAlign = "center";
+        leaderBoard.appendChild(scoreBtn);
+
+    navlink.style.display = "none";
+
+    let back = document.createElement("button");
+    back.setAttribute("class", "btn btn-primary rounded-pill mb-2 mt-4 ml-2");
+    back.textContent = "back to quiz";
+    scoreBtn.appendChild(back);
+
+    back.addEventListener("click",function(){
+        window.location= "index.html";
+    });
+
+    let clear = document.createElement("button");
+    clear.setAttribute("class", "btn btn-primary rounded-pill mb-2 mt-4 ml-2");
+    clear.textContent = "clear scores";
+    scoreBtn.appendChild(clear);
+    
+    clear.addEventListener("click", function(){
+        localStorage.clear();
+        var table = document.querySelector("#table");
+        table.style.display = "none";
+    });
+}
+
+// navigate to highscore
+highscoreLink.addEventListener("click",function(){
+    content.style.display = "none";
+    navlink.style.display = "none";
+
+    pastScores = JSON.parse(localStorage.getItem("pastScores"));
+    showLeaderboard();
+});
+
 
 startBtn.addEventListener("click",startQz);
