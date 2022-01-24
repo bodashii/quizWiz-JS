@@ -15,7 +15,7 @@ const choiceArray = [], subjectArray = [];
 
 
 // start buttons for choices
-for(var j=0 ; j < 4; j++){
+for(var j = 0 ; j < 4; j++){
     var subject = document.createElement("div");
     var opt = document.createElement("button");
     opt.setAttribute("data-index", j);
@@ -66,7 +66,7 @@ function buildQuestion(){
         qzEl.setAttribute("class","text-left");
         qzEl.style.display= "block";
 
-        for (var i = 0; i <4; i++){
+        for (var i = 0; i < 4; i++){
             var index = choiceArray[i].getAttribute("data-index");
             choiceArray[i].textContent = (+index+1) + ". "+questions[questionIndex].choices[index];
             subjectArray[i].appendChild(choiceArray[i]);

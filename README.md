@@ -16,6 +16,7 @@
 > added logic for questions to be built and to fetch from array
 > added high score link
 > fixed timer to display during quiz
+> solved issue with displaying buttons
 
 ### Screenshots ###
 > Coming soon.
